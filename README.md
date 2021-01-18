@@ -5,4 +5,4 @@ A small set of typescript scripts to turn personal data into a hashed value. My 
 So long as you have Node installed, you can run `node testHash.js`
 
 ## License:
-See included license. I hold absouletly no liability.  
+See included license. I hold absouletly no liability. Though this README mentions the medical field, I am in **no** way encouraging it's use in such field.
