@@ -32,7 +32,7 @@
         "affectsGlobalScope": false
       },
       "./testhash.ts": {
-        "version": "fc881182b79084b72f723ea9ef71055fb36d9ca9eedb3d825c6a2b674fe28a51",
+        "version": "6f5c5cd15f2c403e179d5c6da76061a84c04ae4b466b8bb111ed12531d04932d",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       }

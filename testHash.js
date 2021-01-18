@@ -63,7 +63,7 @@ function main() {
                     console.log("That matches our records.");
                 }
                 else {
-                    console.log("varifiaction has failed.");
+                    console.log("Varifiaction has failed. These records do not match the varification code.");
                 }
             }
         }
