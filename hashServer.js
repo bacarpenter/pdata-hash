@@ -1,10 +1,6 @@
 "use strict";
-function main() {
-    var bcHash = personalDataHash('Ben', 'Carpener', '12/31/2000', 12);
-    var rmHash = personalDataHash('Rachel', 'Maddow', '4/1/1973', 413);
-    console.log(checkHash(bcHash, 'Ben', 'Carpener', '12/31/2000', 12));
-    console.log(checkHash(rmHash, 'Rachel', 'Maddow', '4/1/1973', 413));
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.checkHash = exports.personalDataHash = void 0;
 function personalDataHash(first, last, DOB, secretNumber) {
     var SECRET_KEY = 3589723852688877; //Generate your own 16 digit random number. This one is insecure!
     /**
@@ -25,9 +21,21 @@ function personalDataHash(first, last, DOB, secretNumber) {
     hash += SECRET_KEY;
     hash = hash * (secretNumber / 100);
     hash = Math.round(hash);
-    return hash;
+    // Format the hash!
+    var splitHash = hash.toString().split("");
+    var formatedHash = "";
+    var i = 1;
+    splitHash.forEach(function (element) {
+        if (i % 3 === 0) {
+            formatedHash += "-";
+        }
+        formatedHash += element;
+        i += 1;
+    });
+    return formatedHash;
 }
+exports.personalDataHash = personalDataHash;
 function checkHash(hash, first, last, DOB, secretNumber) {
     return (personalDataHash(first, last, DOB, secretNumber) === hash);
 }
-main();
+exports.checkHash = checkHash;

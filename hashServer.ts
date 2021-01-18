@@ -1,13 +1,4 @@
-function  main(): void
-{
-    let bcHash:number = personalDataHash('Ben', 'Carpener','12/31/2000', 12)
-    let rmHash:number = personalDataHash('Rachel', 'Maddow', '4/1/1973', 413)
-
-    console.log(checkHash(bcHash, 'Ben', 'Carpener','12/31/2000', 12))
-    console.log(checkHash(rmHash, 'Rachel', 'Maddow', '4/1/1973', 413))
-}
-
-function personalDataHash(first:string, last:string, DOB:String, secretNumber:number): number
+export function personalDataHash(first:string, last:string, DOB:String, secretNumber:number): string
 {
     const SECRET_KEY = 3589723852688877 //Generate your own 16 digit random number. This one is insecure!
     
@@ -35,12 +26,22 @@ function personalDataHash(first:string, last:string, DOB:String, secretNumber:nu
     hash = hash * (secretNumber/100);
     hash = Math.round(hash)
     
-    return hash; 
+    // Format the hash!
+    let splitHash:string[] = hash.toString().split("")
+    let formatedHash:string = ""
+    let i = 1
+    splitHash.forEach(element => {
+        if (i % 3 === 0)
+        {
+            formatedHash += "-"
+        }
+        formatedHash += element
+        i += 1
+    });
+    return formatedHash; 
 }
 
-function checkHash(hash:number, first:string, last:string, DOB:String, secretNumber:number): boolean
+export function checkHash(hash:string, first:string, last:string, DOB:String, secretNumber:number): boolean
 {
     return (personalDataHash(first, last, DOB, secretNumber) === hash)
 }
-
-main()

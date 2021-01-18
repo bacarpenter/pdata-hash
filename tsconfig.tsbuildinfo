@@ -26,10 +26,15 @@
         "signature": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
         "affectsGlobalScope": true
       },
-      "./app.ts": {
-        "version": "fda5ceedc0bd501c2c52965b411d5c1ce873eeea4244f80b5ff7843a776e7d4d",
-        "signature": "fee7fa64a4140c098069470289eb0a4c27ea2dc719856af0e9d795f5f199ea90",
-        "affectsGlobalScope": true
+      "./hashserver.ts": {
+        "version": "f7defb4b59107cb16d0a4b8c24e81fcecac9793393a1468d6815706c34cea070",
+        "signature": "6d2f1f00b45b853b04d15a59fbad2e7c789fb7e56de36b466c43ee764ed927e1",
+        "affectsGlobalScope": false
+      },
+      "./testhash.ts": {
+        "version": "fc881182b79084b72f723ea9ef71055fb36d9ca9eedb3d825c6a2b674fe28a51",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
       }
     },
     "options": {
@@ -43,10 +48,14 @@
       "watch": true,
       "configFilePath": "./tsconfig.json"
     },
-    "referencedMap": {},
+    "referencedMap": {
+      "./testhash.ts": [
+        "./hashserver.ts"
+      ]
+    },
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
-      "./app.ts",
+      "./hashserver.ts",
       "../../../../usr/local/lib/node_modules/typescript/lib/lib.d.ts",
       "../../../../usr/local/lib/node_modules/typescript/lib/lib.dom.d.ts",
       "../../../../usr/local/lib/node_modules/typescript/lib/lib.es5.d.ts",
